@@ -23,102 +23,110 @@
   </head>
   <body>
     <div class="container">
-      <form>
-        <div class="row">
-          <div class="col-8">
-            <input
-              type="city"
-              class="form-control"
-              placeholder="Enter city name"
-              id="search-text-input"
-            />
-          </div>
+      <div class="weather-chart">
+        <form>
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="city"
+                class="form-control"
+                placeholder="Enter city name"
+                id="search-text-input"
+              />
+            </div>
 
-          <div class="col">
-            <button type="submit" class="col btn btn-success">Search</button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-primary">Current</button>
-          </div>
-        </div>
-      </form>
-
-      <div>
-        <div class="row">
-          <div class="col-6">
-            <i class="fa-sharp fa-solid fa-sun fa-title"></i>
-            <h1 class="temp">12</h1>
-            <span class="fahrenheit-celsius"
-              ><a class="celsius">°C</a> | <a class="fahrenheit">ºF</a></span
-            >
-          </div>
-          <div class="col-3">
-            <div class="other-data">
-              <p class="precipitation">Precipitation: 51%</p>
-              <p class="wind">Wind: 5 m/s</p>
+            <div class="col">
+              <button type="submit" class="col btn btn-success">Search</button>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary">Current</button>
             </div>
           </div>
-          <div class="col-3">
-            <div class="right-text">
-              <h1 class="right-title">Lisbon</h1>
-              <h2 class="right-undertitle"></h2>
-              <p class="right-undertitle-text">Sunny</p>
+        </form>
+
+        <div>
+          <div class="row">
+            <div class="col-6">
+              <i class="fa-sharp fa-solid fa-sun fa-title"></i>
+              <h1 class="temp">12</h1>
+              <span class="fahrenheit-celsius"
+                ><a class="celsius">°C</a> | <a class="fahrenheit">ºF</a></span
+              >
+            </div>
+            <div class="col-3">
+              <div class="other-data">
+                <p class="precipitation">Precipitation: 51%</p>
+                <p class="wind">Wind: 5 m/s</p>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="right-text">
+                <h1 class="right-title">Lisbon</h1>
+                <h2 class="right-undertitle"></h2>
+                <p class="right-undertitle-text">Sunny</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <section class="cards">
+          <h3>Temperature</h3>
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">Monday</p>
+                  <i class="fa-sharp fa-solid fa-sun"></i>
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">Tuesday</p>
+                  <i class="fa-sharp fa-solid fa-sun"></i>
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">Wednesday</p>
+                  <i class="fa-sharp fa-solid fa-sun"></i>
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">Thursday</p>
+                  <i class="fa-sharp fa-solid fa-sun"></i>
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">Friday</p>
+                  <i class="fa-sharp fa-solid fa-sun"></i>
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <section class="cards">
-        <h3>Temperature</h3>
-        <div class="row align-items-center">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-uppertext">Monday</p>
-                <i class="fa-sharp fa-solid fa-sun"></i>
-                <p class="card-text">12°C</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-uppertext">Tuesday</p>
-                <i class="fa-sharp fa-solid fa-sun"></i>
-                <p class="card-text">12°C</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-uppertext">Wednesday</p>
-                <i class="fa-sharp fa-solid fa-sun"></i>
-                <p class="card-text">12°C</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-uppertext">Thursday</p>
-                <i class="fa-sharp fa-solid fa-sun"></i>
-                <p class="card-text">12°C</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <p class="card-uppertext">Friday</p>
-                <i class="fa-sharp fa-solid fa-sun"></i>
-                <p class="card-text">12°C</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="github-link">
+        <a href="https://github.com/dariav-sys/my-weather-app" target="_blank"
+          >Open-source code</a
+        >, by Daria Viter
+      </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

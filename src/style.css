@@ -18,10 +18,17 @@
 }
 
 .container {
-  border: 3px solid rgb(105, 101, 101);
+  margin: 0 auto;
   width: 700px;
   height: 520px;
+}
 
+.github-link {
+  margin-top: 10px;
+}
+
+.weather-chart {
+  border: 3px solid rgb(105, 101, 101);
   margin: 0 auto;
   margin-top: 100px;
   padding: 20px;
