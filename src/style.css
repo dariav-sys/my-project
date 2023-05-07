@@ -58,7 +58,7 @@
   left: -40px;
 }
 
-.precipitation {
+.humidity {
   margin-bottom: 2px;
 }
 
@@ -76,7 +76,7 @@ h3 {
   font-size: 28px;
 }
 
-.right-undertitle {
+.date {
   font-size: 19px;
 }
 
