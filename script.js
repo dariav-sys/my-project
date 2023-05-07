@@ -53,6 +53,8 @@ let city = document.querySelector("#search-text-input");
 let cityRightSide = document.querySelector(".right-title");
 let humidity = document.querySelector("#humidity");
 let wind = document.querySelector("#wind");
+let iconElement = document.querySelector("#icon");
+console.log(iconElement);
 
 currentWeather.addEventListener("click", handleCurrentPosition);
 requestedWeather.addEventListener("click", handleWeatherRequest);
@@ -60,8 +62,6 @@ requestedWeather.addEventListener("click", handleWeatherRequest);
 function handleCurrentPosition() {
   navigator.geolocation.getCurrentPosition(requestCurrentTemp);
 }
-
-
 
 function requestCurrentTemp(position) {
   axios
@@ -81,6 +81,15 @@ function showCurrentTemp(response) {
     date.innerHTML = formatDate(response.data.dt * 1000);
 
     cityRightSide.innerHTML = response.data.name;
+    iconElement.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+
+    iconElement.setAttribute(
+      "alt",
+      `${response.data.weather[0].description}`
+    );
   }
 }
 

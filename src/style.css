@@ -34,7 +34,7 @@
   padding: 20px;
 }
 
-.fa-sun {
+.forecast-icon {
   color: #ffeb00;
   font-size: 58px;
   margin-top: 12px;
@@ -45,11 +45,14 @@
   border: none;
 }
 
-.fa-title {
+.icon {
+  position: relative;
+
+  left: 7px;
   font-size: 95px;
   margin-right: 30px;
-  /* position: relative; */
-  top: 21px;
+
+  top: -17px;
 }
 
 .other-data {
@@ -86,12 +89,6 @@ span {
   left: 10px;
 }
 
-.fa-title {
-  position: relative;
-  top: 12px;
-  left: 18px;
-}
-
 .right-text {
   position: relative;
   top: 28px;
@@ -101,6 +98,10 @@ span {
 
 .card-uppertext {
   margin: 0;
+}
+
+.col-6 {
+  margin-top: 26px;
 }
 
 form {
