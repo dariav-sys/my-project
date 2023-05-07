@@ -108,9 +108,21 @@ form {
   text-align: center;
 }
 
-.fahrenheit,
-.celsius {
+#celsius-link,
+#fahrenheit-link {
   color: rgb(116, 116, 212);
   cursor: pointer;
+  text-decoration: none;
+}
+
+#celsius-link:hover,
+#fahrenheit-link:hover {
+  text-decoration: underline;
+}
+
+#celsius-link.active,
+#fahrenheit-link.active {
+  color: black;
+  cursor: default;
   text-decoration: none;
 }

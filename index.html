@@ -27,7 +27,7 @@
       <div class="weather-chart">
         <form>
           <div class="row">
-            <div class="col-8">
+            <div class="col-10">
               <input
                 type="city"
                 class="form-control"
@@ -39,9 +39,7 @@
             <div class="col">
               <button type="submit" class="col btn btn-success">Search</button>
             </div>
-            <div class="col">
-              <button type="button" class="btn btn-primary">Current</button>
-            </div>
+           
           </div>
         </form>
 
@@ -52,7 +50,7 @@
               <h1 class="temp"></h1>
 
               <span class="fahrenheit-celsius"
-                ><a class="celsius">°C</a> | <a class="fahrenheit">ºF</a></span
+                ><a id="celsius-link" class="active">°C</a> | <a id="fahrenheit-link">ºF</a></span
               >
             </div>
             <div class="col-3">
