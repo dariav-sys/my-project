@@ -7,8 +7,7 @@ let weekDays = [
   "Tuesday",
   "Wednesday",
   "Thursday",
-  "Friday",
-  "Saturday",
+  
 ];
 
 let celsiusTemperature = null;
@@ -41,9 +40,8 @@ function changeToFahrenheit() {
 function changeToCelsius() {
   event.preventDefault();
 
- fahrenheitLink.classList.remove("active");
- celsiusLink.classList.add("active");
-  
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 
   celsiusTemperature
     ? Math.round(((celsiusTemperature - 32) * 5) / 9)
@@ -63,6 +61,7 @@ let cityRightSide = document.querySelector(".right-title");
 let humidity = document.querySelector("#humidity");
 let wind = document.querySelector("#wind");
 let iconElement = document.querySelector("#icon");
+let forecastElement = document.querySelector("#forecast");
 
 requestedWeather.addEventListener("click", handleRequest);
 
@@ -125,3 +124,28 @@ function checkSecondaryData(response) {
 
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
+
+function displayForecast() {
+  let forecastHTML = "";
+
+  weekDays.forEach(function (weekDay) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-uppertext">${weekDay}</p>
+                  <img
+                    id="forecast-icon"
+                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    class="forecast-icon"
+                  />
+                  <p class="card-text">12°C</p>
+                </div>
+              </div>
+            </div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
