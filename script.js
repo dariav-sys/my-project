@@ -142,6 +142,7 @@ function displayForecast(response) {
   let forecastHTML = "";
 
   let forecast = response.data.daily;
+  console.log(forecast);
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
@@ -160,7 +161,9 @@ function displayForecast(response) {
                     }@2x.png"
                     class="forecast-icon"
                   />
-                  <p class="card-text">${Math.round(forecastDay.temp.day)}ºC</p>
+                  <p class="card-text"><span class="max-temp">${Math.round(
+                    forecastDay.temp.max
+                  )}º</span> ${Math.round(forecastDay.temp.min)}º</p>
                 </div>
               </div>
             </div>`;
