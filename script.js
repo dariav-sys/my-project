@@ -1,14 +1,7 @@
 //show date, time
 handleCurrentPosition();
 
-let weekDays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  
-];
+let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
 
 let celsiusTemperature = null;
 
@@ -123,9 +116,16 @@ function checkSecondaryData(response) {
   );
 
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+  getForecastBasedOnCoordinares(response.data.coord);
 }
 
-function displayForecast() {
+function getForecastBasedOnCoordinares(coordinates) {
+  let url = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lat}&appid=${key}&units=metric`;
+  axios.get(url).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastHTML = "";
 
   weekDays.forEach(function (weekDay) {
@@ -147,5 +147,3 @@ function displayForecast() {
   });
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
