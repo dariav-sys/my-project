@@ -1,10 +1,9 @@
 .card {
-  width: 100px;
-
-  height: 180px;
-  text-align: center;
-  padding: 2px;
-  margin: 0 auto;
+     width: 100px;
+    /* height: 180px; */
+    text-align: center;
+    /* padding: 2px; */
+    margin: 0 auto;
 }
 
 .card-body {
@@ -34,12 +33,11 @@
   padding: 20px;
 }
 
-.forecast-icon {
-  color: #ffeb00;
+/* .forecast-icon {
   font-size: 58px;
   margin-top: 12px;
   margin-bottom: 5px;
-}
+} */
 
 .btn-primary {
   border: none;
