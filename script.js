@@ -1,8 +1,6 @@
 //show date, time
 handleCurrentPosition();
 
-let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
-
 let celsiusTemperature = null;
 
 // change C to F
@@ -13,11 +11,27 @@ let celsiusLink = document.querySelector("#celsius-link");
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 
 function formatDate(timestamp) {
-  let now = new Date(timestamp);
+  let now = new Date(timestamp * 1000);
   let hours = now.getHours();
   let minutes = now.getMinutes();
+  let weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = weekDays[now.getDay()];
-  return `${day} ${hours}:${(minutes < 10 ? "0" : "") + minutes}`;
+  return `${day}, ${hours}:${(minutes < 10 ? "0" : "") + minutes}`;
+}
+
+function formatTimestamp(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
@@ -106,7 +120,7 @@ function showRequestedData(response) {
 function checkSecondaryData(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity} %`;
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} m/s`;
-  date.innerHTML = formatDate(response.data.dt * 1000);
+  date.innerHTML = formatDate(response.data.dt);
 
   cityRightSide.innerHTML = response.data.name;
 
@@ -125,25 +139,32 @@ function getForecastBasedOnCoordinares(coordinates) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastHTML = "";
 
-  weekDays.forEach(function (weekDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
+  let forecast = response.data.daily;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-uppertext">${weekDay}</p>
+                  <p class="card-uppertext">${formatTimestamp(
+                    forecastDay.dt
+                  )}</p>
                   <img
                     id="forecast-icon"
-                    src="https://openweathermap.org/img/wn/10d@2x.png"
+                    src="https://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     class="forecast-icon"
                   />
-                  <p class="card-text">12°C</p>
+                  <p class="card-text">${Math.round(forecastDay.temp.day)}ºC</p>
                 </div>
               </div>
             </div>`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
